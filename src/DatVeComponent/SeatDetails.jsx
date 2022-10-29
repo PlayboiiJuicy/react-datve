@@ -23,7 +23,7 @@ const SeatDetails = ({ seatInfors }) => {
         <button className="ghe" style={{ marginLeft: "0" }}></button>
         <span>Ghế trống</span>
       </div>
-      <Table striped bordered hover className="text-center ">
+      <Table width="70%" bordered hover size="sm" className="text-center ">
         <thead>
           <tr className="text-white">
             <th></th>
@@ -37,7 +37,7 @@ const SeatDetails = ({ seatInfors }) => {
               <tr key={idx}>
                 <td>{idx + 1}</td>
                 <td>{item.soGhe}</td>
-                <td>{item.gia}</td>
+                <td>{item.gia.toLocaleString()}</td>
                 <td>
                   <button
                     className="btn btn-danger"
@@ -51,11 +51,17 @@ const SeatDetails = ({ seatInfors }) => {
               </tr>
             );
           })}
+        </tbody>
+        <tfoot>
           <tr>
             <td>Tổng Tiền</td>
-            {}
+            <td colSpan={3}>
+              {selectingSeats.reduce((total, item) => {
+                return (total += item.gia);
+              }, 0)}
+            </td>
           </tr>
-        </tbody>
+        </tfoot>
       </Table>
     </div>
   );
