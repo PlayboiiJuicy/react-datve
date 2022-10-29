@@ -29,6 +29,7 @@ const SeatDetails = ({ seatInfors }) => {
             <th></th>
             <th>Số Ghế</th>
             <th>Giá Tiền</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
