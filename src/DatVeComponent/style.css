@@ -27,6 +27,7 @@
   margin-bottom: 1%;
   font-size: 15px;
   color: yellow;
+  cursor: default !important;
 }
 .firstChar {
   color: yellow;

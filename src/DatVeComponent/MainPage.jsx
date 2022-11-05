@@ -43,10 +43,10 @@ const MainPage = () => {
             <div className="d-flex justify-content-center  text-white my-4">
               <div className="screen text-center"> Screen here</div>
             </div>
-            <Seats seatDetails={seatDetailsData} />
+            <Seats />
           </div>
           <div className="col-5">
-            <SeatDetails seatInfors={selectedSeats} />
+            <SeatDetails />
           </div>
         </div>
       </div>

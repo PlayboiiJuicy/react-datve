@@ -2,7 +2,7 @@ import { Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 
-const SeatDetails = ({ seatInfors }) => {
+const SeatDetails = () => {
   const { selectingSeats } = useSelector((state) => state.bookingSeat);
   const dispatch = useDispatch();
 

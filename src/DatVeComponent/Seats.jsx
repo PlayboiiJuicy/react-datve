@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import swal from "sweetalert";
 
-const Seats = ({ seatDetails, soGhe, getSeat }) => {
+const Seats = () => {
   //   const seatNumbers = seatDatas.filter((seat) => seat.hang !== "");
 
   //   function abc(index1, index2) {
@@ -12,18 +11,12 @@ const Seats = ({ seatDetails, soGhe, getSeat }) => {
   const { selectingSeats, seatsData } = useSelector(
     (state) => state.bookingSeat
   );
-  console.log("redux :", seatsData);
 
-  console.log("state:", seatDetails);
   const dispatch = useDispatch();
 
   const handleSelected = (seat) => {
     dispatch({ type: "booked", seat });
-
-    // console.log(seat);
   };
-  // swal("Hello world!");
-  // console.log(selectingSeats);
   const renderSeats = () => {
     // console.log(seatsData);
     return seatsData.map((row, idx) => {
