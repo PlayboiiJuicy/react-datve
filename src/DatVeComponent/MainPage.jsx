@@ -2,7 +2,7 @@ import React from "react";
 import Seats from "./Seats";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import seatDetails from "./seatDetais.json";
+import seatDetailsData from "./seatDetais.json";
 import SeatDetails from "./SeatDetails";
 import "./style.css";
 
@@ -26,7 +26,7 @@ const MainPage = () => {
         width: "100%",
         height: "100%",
         backgroundImage: "url(./bgmovie.jpg)",
-        backgroundSize: "100%",
+        backgroundSize: "100vw",
       }}
     >
       <div
@@ -43,7 +43,7 @@ const MainPage = () => {
             <div className="d-flex justify-content-center  text-white my-4">
               <div className="screen text-center"> Screen here</div>
             </div>
-            <Seats seatDetails={seatDetails} />
+            <Seats seatDetails={seatDetailsData} />
           </div>
           <div className="col-5">
             <SeatDetails seatInfors={selectedSeats} />

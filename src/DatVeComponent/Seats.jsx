@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+// import swal from "sweetalert";
 
 const Seats = ({ seatDetails, soGhe, getSeat }) => {
   //   const seatNumbers = seatDatas.filter((seat) => seat.hang !== "");
@@ -8,18 +9,24 @@ const Seats = ({ seatDetails, soGhe, getSeat }) => {
   //     console.log(seatNumbers[index1].danhSachGhe[index2]);
   //   }
   // console.log(seatDetails.danhSachGhe);
-  const { selectingSeats } = useSelector((state) => state.bookingSeat);
-  // console.log("state:", selectingSeats);
+  const { selectingSeats, seatsData } = useSelector(
+    (state) => state.bookingSeat
+  );
+  console.log("redux :", seatsData);
 
+  console.log("state:", seatDetails);
   const dispatch = useDispatch();
 
   const handleSelected = (seat) => {
     dispatch({ type: "booked", seat });
+
     // console.log(seat);
   };
-
+  // swal("Hello world!");
+  // console.log(selectingSeats);
   const renderSeats = () => {
-    return seatDetails.map((row, idx) => {
+    // console.log(seatsData);
+    return seatsData.map((row, idx) => {
       if (idx === 0) {
         return (
           <div className="d-flex justify-content-center">
@@ -41,6 +48,7 @@ const Seats = ({ seatDetails, soGhe, getSeat }) => {
               let selectedSeatCSS = "";
               let disabled = false;
               if (ghe.daDat) {
+                console.log("ghe :>> ", ghe);
                 selectedSeatCSS = "gheDuocChon";
                 disabled = true;
               }
